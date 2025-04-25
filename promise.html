@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>JavScript Promise (Addition Example)</h2>
+    <p id="demo"></p>
+
+    <script>
+      let promise = new Promise(function (resolve, reject) {
+        let a = 5;
+        let b = 4;
+        let result = a + b;
+
+        if (typeof b === "number") {
+          resolve("The sum is: " + result);
+        } else {
+          reject("Error: b is not a Number");
+        }
+      });
+
+      promise
+        .then(function (message) {
+          document.getElementById("demo").innerHTML = message;
+        })
+        .catch(function (error) {
+          document.getElementById("demo").innerHTML = error;
+        });
+    </script>
+  </body>
+</html>
